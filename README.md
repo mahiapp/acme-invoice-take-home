@@ -43,7 +43,7 @@ python3 test_prompts.py --stage approval --invoice_path=invoices/invoice_1003.tx
 
 | File | What it covers |
 |------|----------------|
-| `invoice_1001.txt` | Clean happy path |
+| `invoice_1001.txt` | Clean file |
 | `invoice_1002.txt` | Typos + overstock |
 | `invoice_1003.txt` | Fake/zero-stock item + urgent payment language |
 | `invoice_1008.txt` | Unknown items |
