@@ -1,0 +1,6 @@
+langchain
+langgraph
+langchain-xai
+python-dotenv
+pdfplumber
+pydantic
