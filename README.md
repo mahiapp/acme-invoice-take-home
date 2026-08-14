@@ -43,7 +43,7 @@ python3 test_prompts.py --stage approval --invoice_path=invoices/invoice_1003.tx
 
 | File | What it covers |
 |------|----------------|
-| `invoice_1001.txt` | Clean file |
+| `invoice_1001.txt` | Clean happy path |
 | `invoice_1002.txt` | Typos + overstock |
 | `invoice_1003.txt` | Fake/zero-stock item + urgent payment language |
 | `invoice_1008.txt` | Unknown items |
@@ -60,6 +60,18 @@ python3 test_prompts.py --stage approval --invoice_path=invoices/invoice_1003.tx
 4. **Payment** - normal `mock_payment()` function if approved (not an agent)
 
 LangGraph runs the three agents in order. Inventory and processed invoices are stored in `data/inventory.db`.
+
+## Business impact
+
+Acme is losing about $2M/year on manual invoice work, with ~30% error rates and ~5 day turnaround.
+
+This prototype targets that by:
+- Extracting invoice data automatically instead of retyping from messy PDFs/emails
+- Catching stock problems, unknown items, bad math, and fraud signals before money goes out
+- Giving a clear approve/reject record instead of long email chains
+- Flagging duplicates and revisions so AP does not pay the same invoice twice
+
+If rolled out fully, the aim is fewer bad payments, faster AP cycles, and less VP time on routine invoices.
 
 ## Design decisions
 
